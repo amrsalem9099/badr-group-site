@@ -45,16 +45,18 @@ export default function Header({ language, setLanguage }: HeaderProps) {
             <div className="w-10 h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-lg flex items-center justify-center">
               <span className="text-gold-400 font-bold text-xl">B</span>
             </div>
-            <span className="text-xl font-bold text-navy-900">{language === "ar" ? "مجموعة بدر" : "Badr Group"}</span>
+            <span className="text-xl font-bold text-navy-900">
+              {language === "ar" ? "مجموعة البدر" : "Al-Badr Group"}
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className={`hidden md:flex items-center justify-end ${language === "ar" ? "space-x-reverse space-x-4" : "space-x-8"}`}>
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-gray-700 hover:text-gold-600 font-medium transition-colors duration-300 relative group"
+                className={`text-gray-700 hover:text-gold-600 font-medium transition-colors duration-300 relative group`}
               >
                 {content[language][item.key as keyof (typeof content)[typeof language]]}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-600 transition-all duration-300 group-hover:w-full"></span>
