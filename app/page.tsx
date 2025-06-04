@@ -63,7 +63,7 @@ const websiteImages = {
   technologyCompanyImage: "/falconTEAM.jpg?height=300&width=400",
 
   // شعار المجموعة الرئيسي (يمكن أن يكون صورة بدلاً من حرف B)
-  mainLogo: null, // ضع مسار الصورة هنا إذا كنت تريد استبدال حرف B بصورة
+  mainLogo: "/badrnew.png?height=300&width=400", // ضع مسار الصورة هنا إذا كنت تريد استبدال حرف B بصورة
 }
 
 const companies = [
