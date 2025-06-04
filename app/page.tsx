@@ -97,17 +97,17 @@ const companies = [
     },
     image: websiteImages.clothingCompanyImage,
   },
-  {
-    id: 4,
-name: { ar: "فالكون تيم", en: "Falcon Team" },
-field: { ar: "الحلول البرمجية", en: "Software Solutions" },
-description: {
-  ar: "فريق متخصص في تطوير الحلول البرمجية المبتكرة والمخصصة لتلبية احتياجات مختلف المجالات",
-  en: "A specialized team in developing innovative and custom software solutions tailored to diverse industries",
-}
+{
+  id: 4,
+  name: { ar: "فالكون تيم", en: "Falcon Team" },
+  field: { ar: "الحلول البرمجية", en: "Software Solutions" },
+  description: {
+    ar: "فريق متخصص في تطوير الحلول البرمجية المبتكرة والمخصصة لتلبية احتياجات مختلف المجالات",
+    en: "A specialized team in developing innovative and custom software solutions tailored to diverse industries",
+  },  // << هنا الفاصلة مفقودة
 
-    image: websiteImages.technologyCompanyImage,
-  },
+  image: websiteImages.technologyCompanyImage,
+},
 ]
 
 export default function HomePage() {
