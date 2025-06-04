@@ -7,7 +7,7 @@ import { Menu, X, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // شعار المجموعة - يمكن تغييره بسهولة
-const mainGroupLogo = NULL // ضع مسار صورة الشعار هنا إذا كنت تريد استبدال حرف B
+const mainGroupLogo = null // ضع مسار صورة الشعار هنا إذا كنت تريد استبدال حرف B
 
 interface HeaderProps {
   language: "ar" | "en"
