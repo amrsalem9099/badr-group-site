@@ -92,19 +92,20 @@ const companies = [
     name: { ar: "البدر لتجارة الملابس", en: "Al-Badr Clothing Trade" },
     field: { ar: "تجارة الملابس", en: "Clothing Trade" },
     description: {
-      ar: "استيراد وتصدير الملابس والأزياء العصرية",
+      ar: "تجارة الملابس والأزياء العصرية",
       en: "Import and export of clothing and modern fashion",
     },
     image: websiteImages.clothingCompanyImage,
   },
   {
     id: 4,
-    name: { ar: "البدر للتكنولوجيا", en: "Badr Technology" },
-    field: { ar: "تقنية المعلومات", en: "Information Technology" },
-    description: {
-      ar: "حلول تقنية متطورة وتطوير البرمجيات المخصصة",
-      en: "Advanced technical solutions and custom software development",
-    },
+name: { ar: "فالكون تيم", en: "Falcon Team" },
+field: { ar: "الحلول البرمجية", en: "Software Solutions" },
+description: {
+  ar: "فريق متخصص في تطوير الحلول البرمجية المبتكرة والمخصصة لتلبية احتياجات مختلف المجالات",
+  en: "A specialized team in developing innovative and custom software solutions tailored to diverse industries",
+}
+
     image: websiteImages.technologyCompanyImage,
   },
 ]
@@ -149,7 +150,7 @@ export default function HomePage() {
     },
     en: {
       hero: {
-        title: "Badr Group",
+        title: "AL-Badr Group",
         subtitle: "Ambitious Vision.. Distinguished Achievements",
         description:
           "A leading group of companies operating in various economic sectors aiming to achieve sustainable development and innovation",
