@@ -54,13 +54,13 @@ const images = {
 // صور الموقع - يمكن تغييرها بسهولة
 const websiteImages = {
   // صورة المؤسس
-  founderPhoto: "/placeholder.svg?height=400&width=400",
+  founderPhoto: "/abowenr.jpg?height=400&width=400",
 
   // صور الشركات
   realEstateCompanyImage: "/placeholder.svg?height=300&width=400",
   investmentCompanyImage: "/placeholder.svg?height=300&width=400",
   clothingCompanyImage: "/placeholder.svg?height=300&width=400",
-  technologyCompanyImage: "/placeholder.svg?height=300&width=400",
+  technologyCompanyImage: "/falconTEAM.jpg?height=300&width=400",
 
   // شعار المجموعة الرئيسي (يمكن أن يكون صورة بدلاً من حرف B)
   mainLogo: null, // ضع مسار الصورة هنا إذا كنت تريد استبدال حرف B بصورة
