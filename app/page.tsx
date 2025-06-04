@@ -8,10 +8,53 @@ import { Card, CardContent } from "@/components/ui/card"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
+// Image paths for easy management
+const images = {
+  hero: {
+    backgroundPattern: "/images/hero-background-pattern.jpg",
+    heroMainImage: "/images/hero-main-building.jpg",
+  },
+  founder: {
+    founderPhoto: "/images/founder-abdulrahman-badr.jpg",
+    founderBackgroundPattern: "/images/founder-section-bg.jpg",
+  },
+  companies: {
+    realEstate: {
+      logo: "/images/logos/badr-real-estate-logo.png",
+      coverImage: "/images/companies/real-estate-projects.jpg",
+      galleryImage1: "/images/companies/real-estate-building1.jpg",
+      galleryImage2: "/images/companies/real-estate-building2.jpg",
+    },
+    investment: {
+      logo: "/images/logos/badr-investment-logo.png",
+      coverImage: "/images/companies/investment-portfolio.jpg",
+      galleryImage1: "/images/companies/investment-meeting.jpg",
+      galleryImage2: "/images/companies/investment-charts.jpg",
+    },
+    clothing: {
+      logo: "/images/logos/badr-clothing-logo.png",
+      coverImage: "/images/companies/clothing-store.jpg",
+      galleryImage1: "/images/companies/clothing-collection1.jpg",
+      galleryImage2: "/images/companies/clothing-collection2.jpg",
+    },
+    technology: {
+      logo: "/images/logos/badr-technology-logo.png",
+      coverImage: "/images/companies/technology-office.jpg",
+      galleryImage1: "/images/companies/technology-team.jpg",
+      galleryImage2: "/images/companies/technology-solutions.jpg",
+    },
+  },
+  general: {
+    companyMainLogo: "/images/logos/badr-group-main-logo.png",
+    aboutUsImage: "/images/about-us-team.jpg",
+    officeBuilding: "/images/office-building-cairo.jpg",
+  },
+}
+
 const companies = [
   {
     id: 1,
-    name: { ar: "بدر للتطوير العقاري", en: "Badr Real Estate Development" },
+    name: { ar: "البدر للتطوير العقاري", en: "Badr Real Estate Development" },
     field: { ar: "التطوير العقاري", en: "Real Estate Development" },
     description: {
       ar: "شركة رائدة في تطوير المشاريع العقارية السكنية والتجارية",
@@ -21,7 +64,7 @@ const companies = [
   },
   {
     id: 2,
-    name: { ar: "بدر للاستثمار", en: "Badr Investment" },
+    name: { ar: "البدر للاستثمار", en: "Badr Investment" },
     field: { ar: "الاستثمار المالي", en: "Financial Investment" },
     description: {
       ar: "إدارة محافظ استثمارية متنوعة وحلول مالية مبتكرة",
@@ -31,17 +74,17 @@ const companies = [
   },
   {
     id: 3,
-    name: { ar: "بدر للتجارة", en: "Badr Trading" },
-    field: { ar: "التجارة العامة", en: "General Trading" },
+    name: { ar: "البدر لتجارة الملابس", en: "Al-Badr Clothing Trade" },
+    field: { ar: "تجارة الملابس", en: "Clothing Trade" },
     description: {
-      ar: "استيراد وتصدير المواد الخام والمنتجات المتخصصة",
-      en: "Import and export of raw materials and specialized products",
+      ar: "استيراد وتصدير الملابس والأزياء العصرية",
+      en: "Import and export of clothing and modern fashion",
     },
     image: "/placeholder.svg?height=300&width=400",
   },
   {
     id: 4,
-    name: { ar: "بدر للتكنولوجيا", en: "Badr Technology" },
+    name: { ar: "البدر للتكنولوجيا", en: "Badr Technology" },
     field: { ar: "تقنية المعلومات", en: "Information Technology" },
     description: {
       ar: "حلول تقنية متطورة وتطوير البرمجيات المخصصة",
@@ -66,14 +109,14 @@ export default function HomePage() {
   const content = {
     ar: {
       hero: {
-        title: "مجموعة بدر",
+        title: "مجموعة البدر",
         subtitle: "رؤية طموحة.. إنجازات متميزة",
         description: "مجموعة شركات رائدة تعمل في مختلف القطاعات الاقتصادية بهدف تحقيق التنمية المستدامة والابتكار",
         cta: "اكتشف المزيد",
       },
       founder: {
         title: "كلمة المؤسس",
-        name: "عبد الرحمن بدر",
+        name: "عبد الرحمن البدر",
         position: "المؤسس والرئيس التنفيذي",
         message:
           "بدأت رحلتنا برؤية واضحة لبناء مجموعة شركات متكاملة تساهم في التنمية الاقتصادية وتقديم حلول مبتكرة. اليوم، نفخر بما حققناه من إنجازات ونتطلع لمستقبل أكثر إشراقاً.",
@@ -122,7 +165,7 @@ export default function HomePage() {
       className={`min-h-screen bg-white ${language === "ar" ? "font-cairo" : "font-inter"}`}
       dir={language === "ar" ? "rtl" : "ltr"}
     >
-      <Header language={language} setLanguage={setLanguage} />
+      <Header language={language} setLanguage={setLanguage} contact="+2011023614112" location="القاهرة" />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700">
@@ -130,22 +173,24 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-gold-500/10 to-transparent"></div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0.1, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto"
         >
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 relative z-20"
           >
-            {content[language].hero.title}
+            <span className="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+              {content[language].hero.title}
+            </span>
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="text-2xl md:text-3xl mb-8 text-gold-300"
@@ -154,7 +199,7 @@ export default function HomePage() {
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto"
@@ -163,7 +208,7 @@ export default function HomePage() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
@@ -187,7 +232,7 @@ export default function HomePage() {
             {Object.entries(content[language].stats).map(([key, stat], index) => (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0.1, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
@@ -204,7 +249,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0.1, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
@@ -239,7 +284,7 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0.1, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
@@ -314,7 +359,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer language={language} />
+      <Footer language={language} contact="+2011023614112" location="القاهرة" />
     </div>
   )
 }
