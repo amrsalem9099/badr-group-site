@@ -25,6 +25,7 @@ export default function ContactPage() {
     e.preventDefault()
     // Handle form submission
     console.log("Form submitted:", formData)
+    alert(language === "ar" ? "تم إرسال الرسالة بنجاح!" : "Message sent successfully!")
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,9 +48,9 @@ export default function ContactPage() {
       },
       contact: {
         title: "معلومات التواصل",
-        phone: "+966 11 123 4567",
-        email: "info@badrgroup.com",
-        address: "الرياض، المملكة العربية السعودية",
+        phone: "+2011023614112",
+        email: "info@albadrgroup.com",
+        address: "القاهرة، مصر",
       },
       map: {
         title: "موقعنا على الخريطة",
@@ -67,9 +68,9 @@ export default function ContactPage() {
       },
       contact: {
         title: "Contact Information",
-        phone: "+966 11 123 4567",
-        email: "info@badrgroup.com",
-        address: "Riyadh, Saudi Arabia",
+        phone: "+2011023614112",
+        email: "info@albadrgroup.com",
+        address: "Cairo, Egypt",
       },
       map: {
         title: "Our Location",
@@ -85,7 +86,7 @@ export default function ContactPage() {
       <Header language={language} setLanguage={setLanguage} />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+      <section className="relative py-20 mt-16 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-gold-500/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -216,7 +217,7 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-gray-800 mb-1">
                         {language === "ar" ? "البريد الإلكتروني" : "Email"}
                       </h3>
-                      <p className="text-gray-600">{content[language].contact.email}</p>
+                      <p className="text-gray-600">info@albadrgroup.com</p>
                     </div>
                   </div>
 
@@ -238,16 +239,17 @@ export default function ContactPage() {
                   <CardTitle className="text-xl font-bold text-center">{content[language].map.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <div className="h-64 bg-gray-200 rounded-b-lg overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.4!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1635000000000!5m2!1sen!2s"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                  <div className="h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-b-lg overflow-hidden flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <MapPin size={48} className="mx-auto mb-4 text-gold-600" />
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                        {language === "ar" ? "موقعنا" : "Our Location"}
+                      </h3>
+                      <p className="text-gray-600">{content[language].contact.address}</p>
+                      <p className="text-sm text-gray-500 mt-2">
+                        {language === "ar" ? "خريطة تفاعلية قريباً" : "Interactive map coming soon"}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -260,3 +262,4 @@ export default function ContactPage() {
     </div>
   )
 }
+
