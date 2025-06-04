@@ -57,7 +57,7 @@ const websiteImages = {
   founderPhoto: "/abowenr.jpg?height=400&width=400",
 
   // صور الشركات
-  realEstateCompanyImage: "/placeholder.svg?height=300&width=400",
+  realEstateCompanyImage: "/REALESTAT.jpg?height=300&width=400",
   investmentCompanyImage: "/placeholder.svg?height=300&width=400",
   clothingCompanyImage: "/placeholder.svg?height=300&width=400",
   technologyCompanyImage: "/falconTEAM.jpg?height=300&width=400",
