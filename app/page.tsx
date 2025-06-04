@@ -54,7 +54,7 @@ const images = {
 // صور الموقع - يمكن تغييرها بسهولة
 const websiteImages = {
   // صورة المؤسس
-  founderPhoto: "/abowenr.jpg?height=400&width=300",
+  founderPhoto: "/abowenr.jpg?height=400&width=400",
 
   // صور الشركات
   realEstateCompanyImage: "/placeholder.svg?height=300&width=400",
