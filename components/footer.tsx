@@ -10,7 +10,7 @@ interface FooterProps {
 export default function Footer({ language }: FooterProps) {
   const content = {
     ar: {
-      company: "مجموعة بدر",
+      company: "مجموعة البدر",
       description: "مجموعة شركات رائدة تعمل في مختلف القطاعات الاقتصادية",
       quickLinks: "روابط سريعة",
       contact: "معلومات التواصل",
@@ -24,7 +24,7 @@ export default function Footer({ language }: FooterProps) {
       },
     },
     en: {
-      company: "Badr Group",
+      company: "Al-Badr Group",
       description: "A leading group of companies operating in various economic sectors",
       quickLinks: "Quick Links",
       contact: "Contact Info",
@@ -77,7 +77,7 @@ export default function Footer({ language }: FooterProps) {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-gold-400" />
-                <span className="text-gray-300">+966 11 123 4567</span>
+                <span className="text-gray-300">+2011023614112</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-gold-400" />
@@ -85,7 +85,7 @@ export default function Footer({ language }: FooterProps) {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-gold-400" />
-                <span className="text-gray-300">{language === "ar" ? "الرياض، السعودية" : "Riyadh, Saudi Arabia"}</span>
+                <span className="text-gray-300">{language === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}</span>
               </div>
             </div>
           </div>
