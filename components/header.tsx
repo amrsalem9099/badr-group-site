@@ -86,7 +86,7 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               className="border-gold-600 text-gold-600 hover:bg-gold-600 hover:text-white"
             >
               <Globe size={16} className="mr-1" />
-              {language === "ar" ? "EN" : "عر"}
+              {language === "ar" ? "EN" : "ع"}
             </Button>
 
             {/* Mobile Menu Button */}
