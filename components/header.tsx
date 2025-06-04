@@ -6,6 +6,9 @@ import { motion } from "framer-motion"
 import { Menu, X, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+// شعار المجموعة - يمكن تغييره بسهولة
+const mainGroupLogo = null // ضع مسار صورة الشعار هنا إذا كنت تريد استبدال حرف B
+
 interface HeaderProps {
   language: "ar" | "en"
   setLanguage: (lang: "ar" | "en") => void
@@ -43,7 +46,15 @@ export default function Header({ language, setLanguage }: HeaderProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-lg flex items-center justify-center">
-              <span className="text-gold-400 font-bold text-xl">B</span>
+              {mainGroupLogo ? (
+                <img
+                  src={mainGroupLogo || "/placeholder.svg"}
+                  alt="Badr Group Logo"
+                  className="w-8 h-8 object-contain"
+                />
+              ) : (
+                <span className="text-gold-400 font-bold text-xl">B</span>
+              )}
             </div>
             <span className="text-xl font-bold text-navy-900">
               {language === "ar" ? "مجموعة البدر" : "Al-Badr Group"}
@@ -51,7 +62,9 @@ export default function Header({ language, setLanguage }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden md:flex items-center justify-end ${language === "ar" ? "space-x-reverse space-x-4" : "space-x-8"}`}>
+          <nav
+            className={`hidden md:flex items-center justify-end ${language === "ar" ? "space-x-reverse space-x-4" : "space-x-8"}`}
+          >
             {navItems.map((item) => (
               <Link
                 key={item.key}

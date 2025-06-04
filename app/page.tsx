@@ -51,6 +51,21 @@ const images = {
   },
 }
 
+// صور الموقع - يمكن تغييرها بسهولة
+const websiteImages = {
+  // صورة المؤسس
+  founderPhoto: "/placeholder.svg?height=400&width=400",
+
+  // صور الشركات
+  realEstateCompanyImage: "/placeholder.svg?height=300&width=400",
+  investmentCompanyImage: "/placeholder.svg?height=300&width=400",
+  clothingCompanyImage: "/placeholder.svg?height=300&width=400",
+  technologyCompanyImage: "/placeholder.svg?height=300&width=400",
+
+  // شعار المجموعة الرئيسي (يمكن أن يكون صورة بدلاً من حرف B)
+  mainLogo: null, // ضع مسار الصورة هنا إذا كنت تريد استبدال حرف B بصورة
+}
+
 const companies = [
   {
     id: 1,
@@ -60,7 +75,7 @@ const companies = [
       ar: "شركة رائدة في تطوير المشاريع العقارية السكنية والتجارية",
       en: "Leading company in residential and commercial real estate development",
     },
-    image: "/placeholder.svg?height=300&width=400",
+    image: websiteImages.realEstateCompanyImage,
   },
   {
     id: 2,
@@ -70,7 +85,7 @@ const companies = [
       ar: "إدارة محافظ استثمارية متنوعة وحلول مالية مبتكرة",
       en: "Managing diverse investment portfolios and innovative financial solutions",
     },
-    image: "/placeholder.svg?height=300&width=400",
+    image: websiteImages.investmentCompanyImage,
   },
   {
     id: 3,
@@ -80,7 +95,7 @@ const companies = [
       ar: "استيراد وتصدير الملابس والأزياء العصرية",
       en: "Import and export of clothing and modern fashion",
     },
-    image: "/placeholder.svg?height=300&width=400",
+    image: websiteImages.clothingCompanyImage,
   },
   {
     id: 4,
@@ -90,7 +105,7 @@ const companies = [
       ar: "حلول تقنية متطورة وتطوير البرمجيات المخصصة",
       en: "Advanced technical solutions and custom software development",
     },
-    image: "/placeholder.svg?height=300&width=400",
+    image: websiteImages.technologyCompanyImage,
   },
 ]
 
@@ -261,7 +276,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-center md:text-right">
                 <img
-                  src="/placeholder.svg?height=400&width=400"
+                  src={websiteImages.founderPhoto || "/placeholder.svg"}
                   alt={content[language].founder.name}
                   className="w-80 h-80 rounded-full mx-auto md:mx-0 object-cover border-4 border-gold-400 shadow-2xl"
                 />
